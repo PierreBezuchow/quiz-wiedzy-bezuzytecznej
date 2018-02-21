@@ -1,5 +1,6 @@
 export const myQuestions = [
     {
+        number: 1,
         question: "Jaki kraj wprowadził w 1893 roku jako pierwszy na świecie tablice rejestracyjne samochodów?",
         answers: {
             a: "USA",
@@ -10,6 +11,7 @@ export const myQuestions = [
         correctAnswer: "c"
     },
     {
+        number: 2,
         question: "„Światowy Indeks Pokoju” to ranking, który określa jak bardzo pokojowy jest dany kraj. Polska zajmuje 33 miejsce. Kto jest na pierwszym miejscu?",
         answers: {
             a: "Szwajcaria",
@@ -20,6 +22,7 @@ export const myQuestions = [
         correctAnswer: "d"
     },
     {
+        number: 3,
         question: "Skąd wzięło się, pochodzące z XIX w. określanie Afryki jako „Czarny Ląd” ?",
         answers: {
             a: "dlatego, że terytoria były nieznane i niezbadane",
