@@ -1,18 +1,19 @@
 import React from 'react';
-import Questions from './Questions.js';
+import questions from './Question';
 
-export default class Question extends React.Component{
+
+
+
+class Question extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             number: 0,
             question: '',
-            answers: {
                 a: "",
                 b: "",
                 c: "",
-                d: ""
-            },
+                d: "",
             correctAnswer: '',
             selectedAnswer: ''
         };
@@ -33,8 +34,17 @@ export default class Question extends React.Component{
 
 
     render(){
+        const questions = this.props.questions.map(function(element, index){
+            return (
+                <div>
+                    <h1>{element.question}</h1>
+                </div>
+            );
+        });
+
         return (
             <div>
+                {questions}
                 <div className='question'>Pytanie</div>
                 <form>
                     <div className='option'>
