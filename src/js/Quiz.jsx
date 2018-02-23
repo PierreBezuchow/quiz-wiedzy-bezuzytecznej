@@ -8,20 +8,34 @@ class Result extends React.Component{
         constructor(props){
             super(props);
             this.state={
-            userAnswers: this.props.userAnswers,
-            correctAnswers: this.props.correctAnswers
+                score: this.checkAnswers()
             };
         }
+        checkAnswers(){
+            if(this.props.correctAnswers.length === this.props.userAnswers.length){
+                let counter = 0;
 
+                this.props.correctAnswers.forEach((element, index) => {
+                   // this.state.correctAnswers[i] <--> element
+
+                    if(element === this.props.userAnswers[index]){
+                        counter += 1;
+                    }
+                });
+                return counter;
+
+            }
+        }
 
         
 
     render(){
         console.log(this.props.correctAnswers);
-        console.log(this.state.userAnswers);
+        console.log(this.props.userAnswers);
+        console.log(this.state);
 
         return (
-            <div>Twój wynik to </div>
+            <div className='results'>Odpowiedziałeś na {this.state.score} z {this.props.correctAnswers.length} pytań </div>
         );
     }
 }
@@ -170,7 +184,7 @@ class Questions extends React.Component {
         }
 
             return (
-                <div>
+                <div className='question'>
                     {question[this.state.id]}
                     <button type="submit" onClick={this.nextQuestion}
                             value='Next'
@@ -193,7 +207,7 @@ export default class Quiz extends React.Component {
 
 
         return (
-            <div>
+            <div className='quiz'>
                 <Questions questions={questions}/>
 
             </div>

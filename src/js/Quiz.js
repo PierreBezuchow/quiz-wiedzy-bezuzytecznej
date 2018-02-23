@@ -54,7 +54,7 @@ module.exports = [
             b: "Cyborg z przyszłości",
             c: "Robot zabójca",
             d: "Rycerz przyszłości",
-        correctAnswer: "d"
+        correctAnswer: "a"
     },
     {
         number: 7,
