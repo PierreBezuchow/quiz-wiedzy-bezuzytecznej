@@ -2,3 +2,55 @@
 @import './layout/base';
 
 
+body{
+  background-image: url("../assets/img/rick_and_morty.png");
+  background-size: cover;
+  color: #e5b13a;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.quiz{
+  padding-top: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+@mixin button-bg($bg) {
+  background: $bg;
+  &:hover {
+    background:darken($bg,15%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background:darken($bg,25%);
+  }
+}
+
+.btn {
+  color:white;
+  text-decoration:none;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:1.5em;
+}
+
+.btnSubmit {
+  @include button-bg(#71D0C3);
+}
+.question {
+  border-radius: 50px;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.results{
+  font-size: 40px;
+}

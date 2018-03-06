@@ -35,7 +35,9 @@ class Result extends React.Component{
         console.log(this.state);
 
         return (
-            <div className='results'>Odpowiedziałeś na {this.state.score} z {this.props.correctAnswers.length} pytań </div>
+            <div className='results'>
+                <h1>Twój wynik: {this.state.score}/{this.props.correctAnswers.length}</h1>
+            </div>
         );
     }
 }
@@ -80,22 +82,22 @@ class Question extends React.Component {
             <h1>Pytanie nr {this.props.id + 1}</h1>
             <h2>{this.props.question}</h2>
             <label>
-                <h3><input onChange={this.handleChange} id='radioButton' type="radio" value="a"
+                <h3><input className='radio' onChange={this.handleChange} id='radioButton' type="radio" value="a"
                        checked={this.state.selectedAnswer === 'a'}/>
                 A: {this.props.a}</h3>
             </label>
             <label>
-                <h3><input onChange={this.handleChange} id='radioButton' type="radio" value="b"
+                <h3><input className='radio' onChange={this.handleChange} id='radioButton' type="radio" value="b"
                        checked={this.state.selectedAnswer === 'b'}/>
                 B: {this.props.b}</h3>
             </label>
             <label>
-                <h3><input onChange={this.handleChange} id='radioButton' type="radio" value="c"
+                <h3><input className='radio' onChange={this.handleChange} id='radioButton' type="radio" value="c"
                        checked={this.state.selectedAnswer === 'c'}/>
                 C: {this.props.c}</h3>
             </label>
             <label>
-                <h3><input onChange={this.handleChange} id='radioButton' type="radio" value="d"
+                <h3><input className='radio' onChange={this.handleChange} id='radioButton' type="radio" value="d"
                        checked={this.state.selectedAnswer === 'd'}/>
                     D: {this.props.d}</h3>
             </label>
@@ -186,7 +188,7 @@ class Questions extends React.Component {
             return (
                 <div className='question'>
                     {question[this.state.id]}
-                    <button type="submit" onClick={this.nextQuestion}
+                    <button className='btn btnSubmit' type="submit" onClick={this.nextQuestion}
                             value='Next'
                             disabled={this.state.selectedAnswer.length === 0}>{this.state.id === this.props.questions.length - 2 ? 'Zakończ i pokaż wyniki' : 'Następne pytanie'}</button>
                 </div>
@@ -206,11 +208,15 @@ export default class Quiz extends React.Component {
     render() {
 
 
-        return (
+        return (<body>
+            <header>
+                <h1>Quiz wiedzy bezużytecznej</h1>
+            </header>
             <div className='quiz'>
                 <Questions questions={questions}/>
 
             </div>
+            </body>
         );
     };
 
